@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Onjalalaina Edmond RANDRIANANTENAINA</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sidebar-bg:    #5bafd6;
+    --sidebar-border: rgba(0,0,0,0.15);
+    --tag-bg:        rgba(255,255,255,0.32);
+    --tag-text:      #000000;
+    --main-bg:       #ffffff;
+    --main-text:     #000000;
+    --main-muted:    #2a2a2a;
+    --main-border:   #dde6f0;
+    --accent:        #1a6fa0;
+    --chip-bg:       #dff0fa;
+    --chip-text:     #0a4f7a;
+  }
+
+  body {
+    background: #daeef8;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #000;
+    padding: 36px 20px;
+    min-height: 100vh;
+  }
+
+  .cv-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(20,60,100,0.18);
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .sidebar {
+    background: var(--sidebar-bg);
+    padding: 40px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    top: -70px; right: -70px;
+    pointer-events: none;
+  }
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    bottom: -50px; left: -40px;
+    pointer-events: none;
+  }
+
+  .avatar-wrap { text-align: center; position: relative; z-index: 1; }
+
+  .avatar {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.28);
+    border: 3px solid rgba(255,255,255,0.6);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: #000;
+    font-style: italic;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .name-small {
+    font-family: 'DM Serif Display', serif;
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .job-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(255,255,255,0.28);
+    border-radius: 20px;
+    display: inline-block;
+    padding: 3px 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 11px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--sidebar-border);
+    position: relative; z-index: 1;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative; z-index: 1;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .contact-list .icon {
+    width: 26px; height: 26px;
+    background: rgba(255,255,255,0.28);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .skill-wrap { position: relative; z-index: 1; }
+  .skill-group { margin-bottom: 13px; }
+
+  .skill-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(0,0,0,0.55);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 9px;
+    border-radius: 5px;
+    font-size: 10.5px;
+    font-family: 'DM Mono', monospace;
+    border: 1px solid rgba(0,0,0,0.12);
+    transition: background 0.2s;
+  }
+  .tag:hover { background: rgba(255,255,255,0.5); }
+
+  .lang-wrap { position: relative; z-index: 1; }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 9px;
+  }
+
+  .lang-name { font-size: 12.5px; color: #000; }
+
+  .lang-bar-wrap {
+    width: 85px; height: 4px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-bar {
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    border-radius: 2px;
+  }
+
+  .loisirs-wrap { position: relative; z-index: 1; }
+  .loisirs-list { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .main {
+    background: var(--main-bg);
+    padding: 36px 20px 36px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .header-bio {
+    border-bottom: 1.5px solid var(--main-border);
+    padding-bottom: 24px;
+  }
+
+  .bio-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .bio-firstname {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: #000;
+    line-height: 1;
+  }
+
+  .bio-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .bio-text {
+    color: #000;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  .info-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .info-pill {
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11.5px;
+    font-family: 'DM Mono', monospace;
+    border: 1px solid rgba(26,111,160,0.15);
+  }
+
+  .main-section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: var(--main-border);
+  }
+
+  .s-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .formation-timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid var(--main-border);
+  }
+
+  .formation-item {
+    position: relative;
+    margin-bottom: 14px;
+  }
+
+  .formation-item::before {
+    content: '';
+    position: absolute;
+    left: -35px; top: 6px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--accent);
+  }
+
+  .formation-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+
+  .formation-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .formation-sub {
+    font-size: 11.5px;
+    color: #333;
+  }
+
+  .skills-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .skill-card {
+    min-width: 0;
+    background: #f7fbfe;
+    border: 1.5px solid var(--main-border);
+    border-radius: 11px;
+    padding: 14px 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(26,111,160,0.35);
+    box-shadow: 0 6px 18px rgba(26,111,160,0.08);
+  }
+
+  .skill-card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 9px;
+    font-weight: 600;
+  }
+
+  .skill-row-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .skill-row-bar span {
+    font-size: 11.5px;
+    color: #000;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 4px;
+    background: var(--main-border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #5bafd6, var(--accent));
+    border-radius: 2px;
+  }
+
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+
+  .chip {
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    padding: 2px 9px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    border: 1px solid rgba(26,111,160,0.15);
+  }
+
+  .dev-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+   }
+  .dev-status-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 11.5px;
+    color: #000;
+  }
+
+  .status-badge {
+    font-size: 9.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .s-ok    { background: #d1fae5; color: #065f46; }
+  .s-base  { background: #fef9c3; color: #713f12; }
+  .s-cours { background: #dbeafe; color: #1e40af; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .cv-wrapper { box-shadow: none; border-radius: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+  <aside class="sidebar">
+
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <img src="lala.jpeg" alt="">
+      </div>
+      <div class="name">Onjalalaina<br>Edmond</div>
+      <div class="name-small">RANDRIANANTENAINA</div>
+      <div class="job-title">Développeur Web · UI/UX</div>
+    </div>
+
+    <div>
+      <div class="section-label">Contact</div>
+      <ul class="contact-list">
+        <li style="white-space:nowrap;flex-wrap:nowrap;">
+          <span class="icon">📱</span>
+          <span style="font-size:9.5px;font-family:'DM Mono',monospace;letter-spacing:0;white-space:nowrap;">038 781 5005 / 033 302 3609</span>
+        </li>
+        <li><span class="icon">📧</span> nantelala08@gmail.com</li>
+        <li><span class="icon">📍</span> Né le 17 Avril 2004 à Vohimarina</li>
+      </ul>
+    </div>
+
+    <div class="skill-wrap">
+      <div class="section-label">Compétences clés</div>
+      <div class="skill-group">
+        <div class="skill-category">Frontend</div>
+        <div class="skill-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Tailwind</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-category">Backend</div>
+        <div class="skill-tags">
+          <span class="tag">PHP</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">Python</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">API REST</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-category">POO</div>
+        <div class="skill-tags">
+          <span class="tag">C#</span>
+          <span class="tag">Java</span>
+          <span class="tag">C++</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-category">Autres</div>
+        <div class="skill-tags">
+          <span class="tag">Cisco Packet Tracer</span>
+          <span class="tag">Design UI/UX</span>
+          <span class="tag">Linux Mint</span>
+          <span class="tag">Windows</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-wrap">
+      <div class="section-label">Langues</div>
+      <div class="lang-item">
+        <span class="lang-name">Malagasy</span>
+        <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">Français</span>
+        <div class="lang-bar-wrap"><div class="lang-bar" style="width:70%"></div></div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">Anglais</span>
+        <div class="lang-bar-wrap"><div class="lang-bar" style="width:65%"></div></div>
+      </div>
+    </div>
+
+    <div class="loisirs-wrap">
+      <div class="section-label">Loisirs</div>
+      <div class="loisirs-list">
+        <span class="tag">⚽ Football</span>
+        <span class="tag">✏️ Dessiner</span>
+        <span class="tag">💃 Danser</span>
+        <span class="tag">🎬 Films</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <div class="header-bio">
+      <div class="bio-name-row">
+        <div class="bio-firstname">Onjalalaina Edmond RANDRIANANTENAINA</div>
+        <div class="bio-dot"></div>
+      </div>
+      <p class="bio-text"><strong>Passionné avant tout par le Développement Web</strong>, je suis étudiant en L3 Informatique – Parcours DA2I à l'ÉMIT Fianarantsoa. Je conçois des applications web full-stack performantes et des interfaces soignées. Curieux et déterminé, je cherche constamment à progresser et à relever de nouveaux défis techniques.</p>
+      <div class="info-pills">
+        <span class="info-pill">🎓 ÉMIT Fianarantsoa</span>
+        <span class="info-pill">📚 L3 Informatique – DA2I</span>
+      </div>
+    </div>
+
+    <section>
+      <div class="main-section-title"><span class="s-dot"></span> Formation</div>
+      <div class="formation-timeline">
+        <div class="formation-item">
+          <div class="formation-year">2024 – 2026</div>
+          <div class="formation-title">Licence en Informatique (L1 → L3 en cours)</div>
+          <div class="formation-sub">ÉMIT Fianarantsoa · Mention Informatique · Parcours DA2I</div>
+        </div>
+        <div class="formation-item">
+          <div class="formation-year">2023</div>
+          <div class="formation-title">Diplôme du Baccalauréat (BACC)</div>
+          <div class="formation-sub">Madagascar</div>
+        </div>
+        <div class="formation-item">
+          <div class="formation-year">2018</div>
+          <div class="formation-title">Brevet d'Études du Premier Cycle (BEPC)</div>
+          <div class="formation-sub">Madagascar</div>
+        </div>
+        <div class="formation-item">
+          <div class="formation-year">2014</div>
+          <div class="formation-title">Certificat d'Études Primaires Élémentaires (CEPE)</div>
+          <div class="formation-sub">Madagascar</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="main-section-title"><span class="s-dot"></span> Compétences techniques</div>
+      <div class="skills-main-grid">
+
+        <div class="skill-card">
+          <div class="skill-card-title">⚡ Frontend</div>
+          <div class="skill-row-bar"><span>HTML</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+          <div class="skill-row-bar"><span>CSS</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-row-bar"><span>JavaScript</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+          <div class="skill-chips" style="margin-top:8px">
+            <span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🔧 Backend & BDD</div>
+          <div class="skill-row-bar"><span>MySQL</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+          <div class="skill-row-bar"><span>PHP</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+          <div class="skill-row-bar"><span>Node + Express</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-row-bar"><span>PostgreSQL</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+          <div class="skill-row-bar"><span>Python</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+          <div class="skill-chips" style="margin-top:8px">
+            <span class="chip">API REST</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🧩 POO</div>
+          <div class="skill-row-bar"><span>C#</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+          <div class="skill-row-bar"><span>Java</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+          <div class="skill-row-bar"><span>C++</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🌐 Développement d'app</div>
+          <div class="dev-status-list">
+            <div class="dev-status-item">
+              <span>Web</span>
+              <span class="status-badge s-ok">Opérationnel</span>
+            </div>
+            <div class="dev-status-item">
+              <span>Desktop</span>
+              <span class="status-badge s-base">Bases acquises</span>
+            </div>
+            <div class="dev-status-item">
+              <span>Mobile</span>
+              <span class="status-badge s-cours">En cours</span>
+            </div>
+            <div class="dev-status-item">
+              <span>Design UI/UX</span>
+              <span class="status-badge s-ok">Opérationnel</span>
+            </div>
+            <div class="dev-status-item">
+              <span>Réseaux Cisco</span>
+              <span class="status-badge s-cours">En cours</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="main-section-title"><span class="s-dot"></span> Environnements & OS</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="chip" style="font-size:12px;padding:4px 14px">🐧 Linux Mint 22 Cinnamon</span>
+        <span class="chip" style="font-size:12px;padding:4px 14px">🪟 Windows</span>
+        <span class="chip" style="font-size:12px;padding:4px 14px">🌐 Cisco Packet Tracer</span>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
