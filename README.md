@@ -3,7 +3,7 @@
 Mon CV personnel en ligne, réalisé en HTML et CSS.
 
 ## 🔗 Lien
-https://mon-cv-lala7nante.vercel.app
+https://mon-cv-zeta.vercel.app/
 
 ## 👨‍💻 Technologies utilisées
 - HTML
